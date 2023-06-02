@@ -24,6 +24,8 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import {DevFeature} from './src/DevFeature';
+import {RegularFeature} from './src/RegularFeature';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -71,8 +73,8 @@ function App(): JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      {HAS_DEV_FEATURE && <Text>Has Dev Feature</Text>}
-      {HAS_REGULAR_FEATURE && <Text>Has Regular Feature</Text>}
+      {HAS_DEV_FEATURE && <DevFeature />}
+      {HAS_REGULAR_FEATURE && <RegularFeature />}
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>

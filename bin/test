@@ -6,7 +6,7 @@ cd ..
 set -euo pipefail
 IFS=$'\n\t'
 
-yarn react-native bundle --dev false --bundle-output bundle.jsbundle --entry-file index.js
+yarn react-native bundle --dev false --bundle-output bundle.jsbundle --entry-file index.js --reset-cache
 
 cmd () {
   set -x
