@@ -5,8 +5,8 @@
  * @format
  */
 
-import React from 'react';
 import type {PropsWithChildren} from 'react';
+import React from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -24,6 +24,8 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+
+preval`require('./setupPrevalEnvFile')`;
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -55,6 +57,9 @@ function Section({children, title}: SectionProps): JSX.Element {
   );
 }
 
+const HAS_DEV_FEATURE = preval`module.exports = process.env.HAS_DEV_FEATURE === 'true'`;
+const HAS_REGULAR_FEATURE = preval`module.exports = process.env.HAS_REGULAR_FEATURE === 'true'`;
+
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -68,6 +73,8 @@ function App(): JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
+      {HAS_DEV_FEATURE && <Text>Has Dev Feature</Text>}
+      {HAS_REGULAR_FEATURE && <Text>Has Regular Feature</Text>}
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>

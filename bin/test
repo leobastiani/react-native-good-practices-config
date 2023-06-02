@@ -1,0 +1,21 @@
+#!/bin/bash
+
+cd "$(dirname "$0")"
+cd ..
+
+set -euo pipefail
+IFS=$'\n\t'
+
+yarn react-native bundle --dev false --bundle-output bundle.jsbundle --entry-file index.js
+
+cmd () {
+  set -x
+  "$@"
+  { set +x; } 2>/dev/null
+}
+export -f cmd
+
+echo -n "Check presence of non secret code " && grep "Has Regular Feature" "bundle.jsbundle" > /dev/null && echo "✅" || (echo "⛔" && exit 1)
+echo -n "Check presence of secret code " && ! grep "Has Dev Feature" "bundle.jsbundle" > /dev/null && echo "✅" || (echo "⛔" && exit 1)
+
+cmd npx tsc --noEmit
