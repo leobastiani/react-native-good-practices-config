@@ -25,8 +25,6 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-preval`require('./setupPrevalEnvFile')`;
-
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
@@ -57,8 +55,8 @@ function Section({children, title}: SectionProps): JSX.Element {
   );
 }
 
-const HAS_DEV_FEATURE = preval`module.exports = process.env.HAS_DEV_FEATURE === 'true'`;
-const HAS_REGULAR_FEATURE = preval`module.exports = process.env.HAS_REGULAR_FEATURE === 'true'`;
+const HAS_DEV_FEATURE = preval`module.exports = require('env').HAS_DEV_FEATURE === 'true'`;
+const HAS_REGULAR_FEATURE = preval`module.exports = require('env').HAS_REGULAR_FEATURE === 'true'`;
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
