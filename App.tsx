@@ -56,9 +56,8 @@ function Section({children, title}: SectionProps): JSX.Element {
     </View>
   );
 }
-
-const HAS_DEV_FEATURE = preval`module.exports = require('env').HAS_DEV_FEATURE === 'true'`;
-const HAS_REGULAR_FEATURE = preval`module.exports = require('env').HAS_REGULAR_FEATURE === 'true'`;
+const HAS_DEV_FEATURE = process.env.HAS_DEV_FEATURE === 'true';
+const HAS_REGULAR_FEATURE = process.env.HAS_REGULAR_FEATURE === 'true';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';

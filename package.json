@@ -24,6 +24,7 @@
     "@types/react-test-renderer": "^18.0.0",
     "babel-jest": "^29.2.1",
     "babel-plugin-codegen": "^4.1.5",
+    "babel-plugin-inline-dotenv": "^1.7.0",
     "babel-plugin-preval": "^5.1.0",
     "env": "file:./src/env",
     "eslint": "^8.19.0",

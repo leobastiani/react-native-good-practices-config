@@ -2258,6 +2258,13 @@ babel-plugin-codegen@^4.1.5:
     babel-plugin-macros "^3.0.1"
     require-from-string "^2.0.2"
 
+babel-plugin-inline-dotenv@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-inline-dotenv/-/babel-plugin-inline-dotenv-1.7.0.tgz#c4b9f9752678be4b49a6b5d3d2b47def741a4d5f"
+  integrity sha512-FUrXEwY9R9ZO8l0NFHqXFBzHjjMvdIJlELrzJoE6imDsj6Vh7g9svm7iHPHVYPbHmt6BPB2eCAJkwvG6kr5byg==
+  dependencies:
+    dotenv "^16.0.0"
+
 babel-plugin-istanbul@^6.1.1:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-istanbul/-/babel-plugin-istanbul-6.1.1.tgz#fa88ec59232fd9b4e36dbbc540a8ec9a9b47da73"
@@ -2962,6 +2969,11 @@ doctrine@^3.0.0:
   integrity sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w==
   dependencies:
     esutils "^2.0.2"
+
+dotenv@^16.0.0:
+  version "16.1.4"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.1.4.tgz#67ac1a10cd9c25f5ba604e4e08bc77c0ebe0ca8c"
+  integrity sha512-m55RtE8AsPeJBpOIFKihEmqUcoVncQIwo7x9U8ZwLEZw9ZpXboz2c+rvog+jUaJvVrZ5kBOeYQBX5+8Aa/OZQw==
 
 ee-first@1.1.1:
   version "1.1.1"
